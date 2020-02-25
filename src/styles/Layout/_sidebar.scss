@@ -1,0 +1,23 @@
+.sidebar {
+    .sidebar__images {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 60px;
+        .images--item {
+            padding: 10px;
+            border: 1px solid rgb(194, 176, 176);
+            cursor: pointer;
+            // margin: px;
+            &:hover {
+                background-color: rgb(100, 182, 18);
+            }
+            &.active {
+                background-color: rgb(100, 182, 18);
+            }
+        }
+    }
+    .images__item--setting {
+        margin: 80px 10px;
+    }
+}
