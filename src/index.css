@@ -26,7 +26,7 @@ body {
     flex-wrap: wrap; }
     .header .header__right .header__button {
       display: inline-flex;
-      padding-top: 20px; }
+      padding-top: 10px; }
       .header .header__right .header__button .header__right--search {
         padding: 0 30px; }
       .header .header__right .header__button .cart {
@@ -46,23 +46,58 @@ body {
     .header .header__right .header__day {
       background-color: rgba(62, 62, 150, 0.288);
       color: #5900ff;
-      padding: 28px;
+      padding: 0 28px;
+      padding-top: 30px;
+      padding-bottom: 30px;
       margin-right: 20px; }
 
-.sidebar .sidebar__images {
+.sidebar {
+  position: absolute; }
+  .sidebar .sidebar__images {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 60px; }
+    .sidebar .sidebar__images .images--item {
+      padding: 10px;
+      border: 1px solid #c2b0b0;
+      cursor: pointer; }
+      .sidebar .sidebar__images .images--item:hover {
+        background-color: #64b612; }
+      .sidebar .sidebar__images .images--item.active {
+        background-color: #64b612; }
+  .sidebar .images__item--setting {
+    margin: 30px 10px; }
+
+.HomePage {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: 60px; }
-  .sidebar .sidebar__images .images--item {
-    padding: 10px;
-    border: 1px solid #c2b0b0;
-    cursor: pointer; }
-    .sidebar .sidebar__images .images--item:hover {
-      background-color: #64b612; }
-    .sidebar .sidebar__images .images--item.active {
-      background-color: #64b612; }
-.sidebar .images__item--setting {
-  margin: 80px 10px; }
+  position: absolute;
+  margin-left: 60px;
+  background-color: #8b848d; }
+  .HomePage .home__picker {
+    display: inline-flex;
+    margin-left: 60px; }
+    .HomePage .home__picker .arrow-test {
+      margin: 10px 20px; }
+    .HomePage .home__picker .home__picker--pickday {
+      padding-top: 10px; }
+  .HomePage .home__location {
+    padding-top: 10px;
+    flex-wrap: wrap;
+    margin-left: 200px; }
+  .HomePage .home__doctor {
+    padding-top: 10px;
+    margin-left: 15px; }
+  .HomePage .home__byday {
+    padding-top: 10px;
+    margin-left: 15px; }
+  .HomePage .home__icon {
+    padding-top: 10px;
+    margin-left: 10px; }
+  .HomePage .home__display {
+    padding-top: 10px;
+    margin: 0 16px; }
+    .HomePage .home__display .display__1 {
+      margin: 0 10px; }
 
 /*# sourceMappingURL=index.css.map */

@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter style={{ position: "relative" }}>
         <Header />
         <SideBar />
         <Switch>{showMenuHome(routesHome)}</Switch>

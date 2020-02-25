@@ -10,7 +10,7 @@ import Bill from "../../images/bill.png";
 import Truck from "../../images/truck.png";
 import Agreement from "../../images/agreement.png";
 import Price from "../../images/price.png";
-import Woman from "../../images/price.png";
+import Woman from "../../images/woman.png";
 import PieChart from "../../images/pie-chart.png";
 
 import Setting from "../../images/settings.png";
@@ -50,11 +50,14 @@ class SiderBar extends Component {
           <span className="images--item">
             <img src={Agreement} alt="agreement" />
           </span>
-          {/* <span className="images--item">
+          <span className="images--item">
             <img src={Price} alt="price" />
-          </span> */}
+          </span>
           <span className="images--item">
             <img src={Woman} alt="woman" />
+          </span>
+          <span className="images--item">
+            <img src={PieChart} alt="PieChart" />
           </span>
         </div>
         <div className="images__item--setting">
