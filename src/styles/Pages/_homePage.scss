@@ -3,7 +3,9 @@
     position: absolute;
     // margin-top: 10px;
     margin-left: 60px;
-    background-color: rgb(139, 132, 141);
+    width: 100%;
+    height: 100%;
+    background-color: rgb(209, 190, 214);
     .home__picker {
         // position: absolute;
         display: inline-flex;
@@ -44,7 +46,12 @@
             margin: 0 10px;
         }
     }
-    // .header__day{
+}
 
-    // }
+.calenderss {
+    margin-top: 100px;
+    margin-left: 100px;
+    padding: 0 5px;
+    text-align: center;
+    width: 90%;
 }

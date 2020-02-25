@@ -69,11 +69,21 @@ body {
   .sidebar .images__item--setting {
     margin: 30px 10px; }
 
+.CalenderItem {
+  background-color: white;
+  text-align: center; }
+  .CalenderItem .colItem {
+    border: 1px solid black;
+    background-color: white;
+    padding: 10px 5px; }
+
 .HomePage {
   display: flex;
   position: absolute;
   margin-left: 60px;
-  background-color: #8b848d; }
+  width: 100%;
+  height: 100%;
+  background-color: #d1bed6; }
   .HomePage .home__picker {
     display: inline-flex;
     margin-left: 60px; }
@@ -99,5 +109,12 @@ body {
     margin: 0 16px; }
     .HomePage .home__display .display__1 {
       margin: 0 10px; }
+
+.calenderss {
+  margin-top: 100px;
+  margin-left: 100px;
+  padding: 0 5px;
+  text-align: center;
+  width: 90%; }
 
 /*# sourceMappingURL=index.css.map */

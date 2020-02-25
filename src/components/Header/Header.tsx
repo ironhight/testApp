@@ -41,7 +41,6 @@ class Header extends Component {
               <button className="header__right--bell">
                 <img src={Call} alt="call" />
               </button>
-              {/* <i className="material-icons">call</i> */}
               <span className="cart__quantity">{2}</span>
             </div>
             <div className="cart">
