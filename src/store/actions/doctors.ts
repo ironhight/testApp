@@ -5,7 +5,7 @@ export const getDoctor = () => (
   dispatch: (arg0: { type: string; payload: any }) => void
 ) => {
   return api
-    .get("/")
+    .get("")
     .then(res => {
       dispatch({
         type: types.GET_DOCTOR,

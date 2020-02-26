@@ -1,7 +1,10 @@
 import * as types from "../constants/actionTypes";
 
-const initialState: [] = [];
+// const initialState: [
+//   { id: string; name: string; avatar: string; appts: number }
+// ] = [{ id: "", name: "", avatar: "", appts: 0 }];
 
+const initialState: [] = [];
 const doctorReducer = (
   state = initialState,
   action: { type: string; payload: any }

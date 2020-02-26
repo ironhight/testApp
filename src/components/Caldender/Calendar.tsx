@@ -5,16 +5,51 @@ import CalendarItem from "./CalendarItem/CalendarItem";
 class Calendarss extends Component {
   render() {
     return (
-      <div>
-        <Row>
+      <div className="calenderHeader">
+        <Row className="calenderHeader__row">
           <Col span={3}></Col>
-          <Col span={3}>22 MONDAY</Col>
-          <Col span={3}>23 TUESDAY</Col>
-          <Col span={3}>24 WEDNESDAY</Col>
-          <Col span={3}>25 THUSDAY</Col>
-          <Col span={3}>26 FRIDAY</Col>
-          <Col span={3}>27 SATURDAY</Col>
-          <Col span={3}>28 SUNDAY</Col>
+          <Col span={3}>
+            <div className="calenderHeader__item">
+              <p className="calender__day">22</p>
+              <p className="calender__th">MONDAY</p>
+            </div>
+          </Col>
+          <Col span={3}>
+            <div className="calenderHeader__item">
+              <p className="calender__day">23</p>
+              <p className="calender__th">TUESDAY</p>
+            </div>
+          </Col>
+          <Col span={3}>
+            <div className="calenderHeader__item">
+              <p className="calender__day">24</p>
+              <p className="calender__th">WEDNESDAY</p>
+            </div>
+          </Col>
+          <Col span={3}>
+            <div className="calenderHeader__item">
+              <p className="calender__day">25</p>
+              <p className="calender__th">THUSDAY</p>
+            </div>
+          </Col>
+          <Col span={3}>
+            <div className="calenderHeader__item">
+              <p className="calender__day">26</p>
+              <p className="calender__th">FRIDAY</p>
+            </div>{" "}
+          </Col>
+          <Col span={3}>
+            <div className="calenderHeader__item">
+              <p className="calender__day">27</p>
+              <p className="calender__th">SATURDAY</p>
+            </div>
+          </Col>
+          <Col span={3}>
+            <div className="calenderHeader__item">
+              <p className="calender__day end">28</p>
+              <p className="calender__th">SUNDAY</p>
+            </div>{" "}
+          </Col>
         </Row>
         <CalendarItem />
       </div>

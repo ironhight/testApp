@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://5dd690cfce4c300014403a93.mockapi.io/api/dashboard"
+  baseURL: "https://my.api.mockaroo.com/users.json?key=b5a138b0"
 });
 
 export default api;
