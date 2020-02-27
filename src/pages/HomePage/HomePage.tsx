@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { DatePicker, Button, Icon, Menu, Dropdown } from "antd";
+import { DatePicker, Button, Icon, Menu, Dropdown, Select } from "antd";
 import Location from "../../images/pin.png";
 import userHome from "../../images/userHome.png";
 import Gift from "../../images/gift.png";
@@ -62,6 +62,12 @@ class HomePage extends Component {
       </Menu>
     );
 
+    const { Option } = Select;
+
+    const dropDown = () => {
+      return <img src={userHome} alt="userHome" />;
+    };
+
     return (
       <>
         <div className="HomePage">
@@ -90,17 +96,44 @@ class HomePage extends Component {
           <div className="home__doctor">
             <Dropdown overlay={menuDoctor}>
               <Button>
-                <img src={userHome} alt="userHome" />
-                <span className="home__doctor--user">All doctor</span>
+                <img
+                  src={userHome}
+                  alt="userHome"
+                  style={{ width: "20px", height: "20px", marginRight: "5px" }}
+                />
+                <span className="home__doctor--user" style={{ opacity: "0.5" }}>
+                  All doctor
+                </span>
                 <Icon type="down" />
               </Button>
             </Dropdown>
+
+            {/* <Select
+              showSearch
+              style={{ width: 200 }}
+              placeholder="All doctor"
+              optionFilterProp="children"
+              filterOption={(input: any, option: any) =>
+                option.props.children
+                  .toLowerCase()
+                  .indexOf(input.toLowerCase()) >= 0
+              }
+            >
+              <Option value="jack">Jack</Option>
+              <Option value="lucy">Lucy</Option>
+              <Option value="tom">Tom</Option>
+            </Select> */}
           </div>
           <div className="home__byday">
             <Dropdown overlay={menuByday}>
               <Button>
-                <img src={Gift} alt="gift" />
-                <span className="home__byday--option">View by Day</span>
+                <img src={Gift} alt="gift" style={{ marginRight: "5px" }} />
+                <span
+                  className="home__byday--option"
+                  style={{ fontSize: "13px" }}
+                >
+                  View by Day
+                </span>
                 <Icon type="down" />
               </Button>
             </Dropdown>

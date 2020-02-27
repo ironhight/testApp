@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { DatePicker } from "antd";
 
+// interface
 class DateRange extends Component {
   state = {
     startValue: null,
@@ -8,43 +9,43 @@ class DateRange extends Component {
     endOpen: false
   };
 
-  disabledStartDate = startValue => {
-    const { endValue } = this.state;
+  disabledStartDate = (startValue: any) => {
+    const { endValue = "null" } = this.state;
     if (!startValue || !endValue) {
       return false;
     }
     return startValue.valueOf() > endValue.valueOf();
   };
 
-  disabledEndDate = endValue => {
-    const { startValue } = this.state;
+  disabledEndDate = (endValue: any) => {
+    const { startValue = "null" } = this.state;
     if (!endValue || !startValue) {
       return false;
     }
     return endValue.valueOf() <= startValue.valueOf();
   };
 
-  onChange = (field, value) => {
+  onChange = (field: any, value: any) => {
     this.setState({
       [field]: value
     });
   };
 
-  onStartChange = value => {
+  onStartChange = (value: any) => {
     this.onChange("startValue", value);
   };
 
-  onEndChange = value => {
+  onEndChange = (value: any) => {
     this.onChange("endValue", value);
   };
 
-  handleStartOpenChange = open => {
+  handleStartOpenChange = (open: any) => {
     if (!open) {
       this.setState({ endOpen: true });
     }
   };
 
-  handleEndOpenChange = open => {
+  handleEndOpenChange = (open: any) => {
     this.setState({ endOpen: open });
   };
 
