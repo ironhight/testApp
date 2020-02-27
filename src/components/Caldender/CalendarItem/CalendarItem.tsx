@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Avatar, Button, Icon, Dropdown, Menu } from "antd";
+import { Avatar, Modal } from "antd";
 import _ from "lodash";
 
 import { Row, Col } from "antd";
 import * as DoctorActions from "../../../store/actions/doctors";
+import EditCustomer from "../../Modal/EditCustomer/EditCustomer";
 
 interface Props {
   doctors: any;
@@ -15,14 +16,53 @@ interface State {}
 
 class CalendarItem extends Component<Props, State> {
   componentDidMount() {
-    // if (!_.isEmpty(this.props.doctors)) {
     this.props.getDoctor();
-    // }
   }
+
+  state = { visible: false };
+
+  showModal = () => {
+    this.setState({
+      visible: true
+    });
+  };
+
+  handleOk = (e: any) => {
+    console.log(e);
+    this.setState({
+      visible: false
+    });
+  };
+
+  handleCancel = (e: any) => {
+    console.log(e);
+    this.setState({
+      visible: false
+    });
+  };
+
+  // custommerTable = () => {
+  //   for (let i: number = 0; i < 20; i++) {
+  //     return (
+  //       <p className="cuctomer3" style={{ backgroundColor: "#fff6d8" }}>
+  //         23:00 - UserName2
+  //       </p>
+  //     );
+  //   }
+  // };
 
   render() {
     let { doctors } = this.props;
-    let temp1, temp2, temp3, temp4, temp5, temp6, temp7: any;
+    let temp1,
+      temp2,
+      temp3,
+      temp4,
+      temp5,
+      temp6,
+      temp7,
+      temp8,
+      temp9,
+      temp10: any;
     if (!_.isEmpty(doctors)) {
       console.log("TCL: CalendarItem -> render -> doctors", doctors);
       // temp = doctors.find((item: { id: string }) => item.id === "1");
@@ -33,6 +73,9 @@ class CalendarItem extends Component<Props, State> {
       temp5 = doctors.filter((item: { id: number }) => item.id === 5)[0];
       temp6 = doctors.filter((item: { id: number }) => item.id === 6)[0];
       temp7 = doctors.filter((item: { id: number }) => item.id === 7)[0];
+      temp8 = doctors.filter((item: { id: number }) => item.id === 8)[0];
+      temp9 = doctors.filter((item: { id: number }) => item.id === 9)[0];
+      temp10 = doctors.filter((item: { id: number }) => item.id === 10)[0];
       // temp3 = doctors.filter((item: { id: string }) => item.id === "3")[0].name;
       // temp4 = doctors.filter((item: { id: string }) => item.id === "4")[0].name;
     }
@@ -57,13 +100,24 @@ class CalendarItem extends Component<Props, State> {
           <Col span={3} className="colItem"></Col>
           <Col span={3} className="colItem"></Col>
           <Col span={3} className="colItem"></Col>
-          <Col span={3} className="colItem edit">
+          <Col span={3} className="colItem edit" onClick={this.showModal}>
             {!_.isEmpty(temp1) && (
               <div className="doctor__appts">
                 <p>{temp1.appts} appointment</p>
               </div>
             )}
           </Col>
+
+          <Modal
+            title="23 lich hen"
+            visible={this.state.visible}
+            onOk={this.handleOk}
+            onCancel={this.handleCancel}
+            style={{ maxHeight: "calc(100vh - 210px)", overflowY: "auto" }}
+          >
+            <EditCustomer />
+          </Modal>
+
           <Col span={3} className="colItem edit">
             {!_.isEmpty(temp1) && (
               <div className="doctor__appts">
@@ -173,9 +227,183 @@ class CalendarItem extends Component<Props, State> {
           <Col span={3} className="colItem"></Col>
           <Col span={3} className="colItem"></Col>
           <Col span={3} className="colItem edit">
-            {!_.isEmpty(temp3) && (
+            {!_.isEmpty(temp5) && (
               <div className="doctor__appts">
-                <p>{temp3.appts} appointment</p>
+                <p>{temp5.appts} appointment</p>
+              </div>
+            )}
+          </Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+        </Row>
+
+        <Row>
+          <Col span={3} className="colItem doctor">
+            {!_.isEmpty(temp6) && (
+              <div className="doctor">
+                <div className="doctor__avatar">
+                  <Avatar src={temp6.avatar} />
+                </div>
+                <div className="doctor__name">
+                  <p>{temp6.name}</p>
+                  <p style={{ opacity: "0.5" }}>{temp6.appts} appts</p>
+                </div>
+              </div>
+            )}
+          </Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem edit">
+            {!_.isEmpty(temp6) && (
+              <div className="doctor__appts">
+                <p>{temp6.appts} appointment</p>
+              </div>
+            )}
+          </Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+        </Row>
+
+        <Row>
+          <Col span={3} className="colItem doctor">
+            {!_.isEmpty(temp6) && (
+              <div className="doctor">
+                <div className="doctor__avatar">
+                  <Avatar src={temp6.avatar} />
+                </div>
+                <div className="doctor__name">
+                  <p>{temp6.name}</p>
+                  <p style={{ opacity: "0.5" }}>{temp6.appts} appts</p>
+                </div>
+              </div>
+            )}
+          </Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem edit">
+            {!_.isEmpty(temp6) && (
+              <div className="doctor__appts">
+                <p>{temp6.appts} appointment</p>
+              </div>
+            )}
+          </Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+        </Row>
+
+        <Row>
+          <Col span={3} className="colItem doctor">
+            {!_.isEmpty(temp7) && (
+              <div className="doctor">
+                <div className="doctor__avatar">
+                  <Avatar src={temp7.avatar} />
+                </div>
+                <div className="doctor__name">
+                  <p>{temp7.name}</p>
+                  <p style={{ opacity: "0.5" }}>{temp7.appts} appts</p>
+                </div>
+              </div>
+            )}
+          </Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem edit">
+            {!_.isEmpty(temp7) && (
+              <div className="doctor__appts">
+                <p>{temp7.appts} appointment</p>
+              </div>
+            )}
+          </Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+        </Row>
+
+        <Row>
+          <Col span={3} className="colItem doctor">
+            {!_.isEmpty(temp8) && (
+              <div className="doctor">
+                <div className="doctor__avatar">
+                  <Avatar src={temp8.avatar} />
+                </div>
+                <div className="doctor__name">
+                  <p>{temp8.name}</p>
+                  <p style={{ opacity: "0.5" }}>{temp8.appts} appts</p>
+                </div>
+              </div>
+            )}
+          </Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem edit">
+            {!_.isEmpty(temp8) && (
+              <div className="doctor__appts">
+                <p>{temp8.appts} appointment</p>
+              </div>
+            )}
+          </Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+        </Row>
+
+        <Row>
+          <Col span={3} className="colItem doctor">
+            {!_.isEmpty(temp9) && (
+              <div className="doctor">
+                <div className="doctor__avatar">
+                  <Avatar src={temp9.avatar} />
+                </div>
+                <div className="doctor__name">
+                  <p>{temp9.name}</p>
+                  <p style={{ opacity: "0.5" }}>{temp9.appts} appts</p>
+                </div>
+              </div>
+            )}
+          </Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem edit">
+            {!_.isEmpty(temp9) && (
+              <div className="doctor__appts">
+                <p>{temp9.appts} appointment</p>
+              </div>
+            )}
+          </Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+        </Row>
+
+        <Row>
+          <Col span={3} className="colItem doctor">
+            {!_.isEmpty(temp10) && (
+              <div className="doctor">
+                <div className="doctor__avatar">
+                  <Avatar src={temp10.avatar} />
+                </div>
+                <div className="doctor__name">
+                  <p>{temp10.name}</p>
+                  <p style={{ opacity: "0.5" }}>{temp10.appts} appts</p>
+                </div>
+              </div>
+            )}
+          </Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem"></Col>
+          <Col span={3} className="colItem edit">
+            {!_.isEmpty(temp10) && (
+              <div className="doctor__appts">
+                <p>{temp10.appts} appointment</p>
               </div>
             )}
           </Col>
@@ -185,6 +413,9 @@ class CalendarItem extends Component<Props, State> {
         </Row>
       </div>
     );
+  }
+  CustommerTable(): React.ReactNode {
+    throw new Error("Method not implemented.");
   }
 }
 

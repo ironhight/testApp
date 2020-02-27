@@ -1,18 +1,13 @@
 import React, { Component } from "react";
 import { DatePicker, Button, Icon, Menu, Dropdown } from "antd";
-// import { Link } from "react-router-dom";
 import Location from "../../images/pin.png";
 import userHome from "../../images/userHome.png";
 import Gift from "../../images/gift.png";
 import moment from "moment";
 import Calenderss from "../../components/Caldender/Calendar";
-// import { Row, Col } from "antd";
 const { RangePicker } = DatePicker;
 
 const dateFormat = "YYYY/MM/DD";
-// const monthFormat = "YYYY/MM";
-
-// const dateFormatList = ["DD/MM/YYYY", "DD/MM/YY"];
 
 class HomePage extends Component {
   render() {
